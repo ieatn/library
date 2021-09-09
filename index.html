@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Library</h1>
+    <main class="main">
+        <button class="btn" id="addBookBtn">Add Book</button>
+        <div class="books-grid" id="booksGrid"></div>
+    </main>
+
+    <div class="modal" id="addBookModal">
+        <form class="add-book-form" id="addBookForm">
+            <h3>add new book</h3>
+            <input type="text" class="input" id="title"
+                placeholder="Title"
+                required>
+            <p class="error-msg" id="errorMsg"></p>
+            <input type="text" class="input" id="author"
+                placeholder="Author"
+                required>
+            <input type="text" class="input" id="pages"
+                placeholder="Pages"
+                required>
+            <div class="is-read">
+                <label for="is-read">did you read this?</label>
+                <input type="checkbox" class="checkbox" id="isRead">
+            </div>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+        <div class="modal" id="accountModal"></div>
+        <div class="overlay" id="overlay"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: 'AIzaSyBv30hELJ-tYN-kLoFFsWmD9az7TNqMNec',
+        authDomain: 'library-ba067.firebaseapp.com',
+        projectId: 'library-ba067',
+        storageBucket: 'library-ba067.appspot.com',
+        messagingSenderId: '915404085981',
+        appId: '1:915404085981:web:c5a384ca4340b4b7e39934',
+      }
+      firebase.initializeApp(firebaseConfig)
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
